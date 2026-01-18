@@ -9,24 +9,37 @@
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
-      height: 100%;
       background: black;
-    }
-
-    img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+    }
+
+    /* Сбрасываем ограничение на высоту, чтобы появился скролл */
+    body {
+      overflow-y: auto;
+    }
+
+    /* Картинки */
+    img {
       display: none;
+      width: 100%;       /* растягиваем по ширине */
+      height: auto;      /* сохраняем пропорции */
+      max-width: 100%;   /* не вылезает за экран */
+      object-fit: cover; /* красиво обрезает, если нужно */
+      display: block;
     }
 
+    /* Компьютерная версия */
     @media (min-width: 769px) {
-      .desktop { display: block; }
+      .desktop {
+        display: block;
+      }
     }
 
+    /* Мобильная версия */
     @media (max-width: 768px) {
-      .mobile { display: block; }
+      .mobile {
+        display: block;
+      }
     }
   </style>
 </head>
